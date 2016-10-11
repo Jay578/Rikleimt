@@ -1,0 +1,35 @@
+# Mac OS X files
+.DS_Store
+
+# NPM files
+npm-debug.log
+node_modules
+
+# Bower
+bower_components
+
+#actiohero stuff
+pids
+log/*.log
+
+#packmule
+deploy/aws_credentials.json
+deploy/configs/*
+
+#make
+target/*
+
+newrelic_agent.log
+target/*newrelic_agent.log
+
+tmp/
+
+.sass-cache
+
+# Auto generated files
+# public/js/vendor.js
+# public/js/app.js
+# public/css/app.css
+# public/css/foundation.css
+# public/css/vendor.css
+public/**

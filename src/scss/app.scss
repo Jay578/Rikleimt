@@ -1,0 +1,18 @@
+@import "intro";
+@import "main";
+
+body {
+  overflow: auto !important;
+  background-color: black;
+}
+
+@keyframes hide
+{
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
