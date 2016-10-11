@@ -4,20 +4,27 @@
   animation-timing-function: linear;
   animation-fill-mode: forwards;
   animation-delay: 0s, 15s;
+  color: white;
+  letter-spacing: 2px;
 
   .main-image {
-    position: relative;
-    left: 38%;
-    width: 500px;
-    height: 500px;
-    background: url('../img/rikleimt.png') no-repeat;
-    background-size: cover;
+    text-align: center;
+
+    img {
+      width: 600px;
+    }
+  }
+
+  .tagline {
+    text-align: center;
+    font-family: $league-body-font, sans-serif;
+    font-size: 65px;
   }
 
   .coming-soon {
     color: white;
     text-align: center;
-    font-family: fantasy;
+    font-family: $league-header-font, sans-serif;
     font-size: 48px;
   }
 }

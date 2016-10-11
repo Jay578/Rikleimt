@@ -118,6 +118,13 @@ module.exports = function(grunt) {
           stderr: true
         }
       },
+      moveFonts: {
+        command: 'cp -R ' + __dirname + '/src/fonts "' + distDir + '"',
+        options: {
+          stdout: true,
+          stderr: true
+        }
+      },
       cleanTmp: {
         command: 'rm -rf "' + tmpDir + '"',
         options: {
@@ -180,6 +187,10 @@ module.exports = function(grunt) {
       img: {
         files: ['src/img/**/*'],
         tasks: ['shell:moveImages']
+      },
+      fonts: {
+        files: ['src/fonts/**/*'],
+        tasks: ['shell:moveFonts']
       }
     },
     concurrent: {
@@ -187,7 +198,7 @@ module.exports = function(grunt) {
         logConcurrentOutput: true
       },
       dev: {
-        tasks: ['shell:startServer', 'watch:js', 'watch:css', 'watch:img']
+        tasks: ['shell:startServer', 'watch:js', 'watch:css', 'watch:img', 'watch:fonts']
       }
     },
   });
@@ -238,8 +249,8 @@ module.exports = function(grunt) {
   grunt.registerTask('vendorTmp', ['concat:dist']);
   grunt.registerTask('appTmp', ['build:appjs', 'compass:dist']);
 
-  grunt.registerTask('dev', ['shell:moveImages', 'vendorTmp', 'appTmp', 'shell:moveTmpToDist', 'concurrent']);
-  grunt.registerTask('build:dist', ['vendorTmp', 'appTmp', 'shell:moveTmpToDist', 'uglify', 'shell:cleanTmp']);
+  grunt.registerTask('dev', ['vendorTmp', 'appTmp', 'shell:moveImages', 'shell:moveFonts', 'shell:moveTmpToDist', 'concurrent']);
+  grunt.registerTask('build:dist', ['vendorTmp', 'appTmp', 'shell:moveImages', 'shell:moveFonts', 'shell:moveTmpToDist', 'uglify', 'shell:cleanTmp']);
   grunt.registerTask('publish', function() {
     throw grunt.util.error("This project no longer requires grunt publish to be run before pull requests.");
   });
