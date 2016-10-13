@@ -8,6 +8,7 @@
   .first {
     position: relative;
     top: 300px;
+    text-align: center;
     animation-name: hide, fadein;
     animation-duration: 5s;
     animation-timing-function: linear;
@@ -18,6 +19,7 @@
   .second {
     position: relative;
     top: 300px;
+    text-align: center;
     animation-name: hide, fadein;
     animation-duration: 5s;
     animation-timing-function: linear;
@@ -28,6 +30,7 @@
   .third {
     position: relative;
     top: 300px;
+    text-align: center;
     animation-name: hide, fadein;
     animation-duration: 5s;
     animation-timing-function: linear;
@@ -39,7 +42,6 @@
 @keyframes fadein {
   0% {
     opacity: 0;
-    left: 15%;
   }
   25% {
     opacity: 0.5;
@@ -52,6 +54,5 @@
   }
   100% {
     opacity: 0;
-    left: 65%;
   }
 }

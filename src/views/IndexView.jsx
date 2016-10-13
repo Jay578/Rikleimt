@@ -4,6 +4,9 @@ var IndexView = module.exports = React.createClass({
   render: function() {
     return  <div className="row">
               <iframe style={{display: 'none'}} src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/247716583&amp;auto_play=true"></iframe>
+              <video controls autoPlay muted poster="public/img/tower_promo.png" className="bgvid">
+                  <source src="public/img/tower_promo.mp4" type="video/mp4" />
+              </video>
               <div className="intro col-md-12 col-sm-12 col-xs-12">
                 <div className="first">Maybe life should be about more than just surviving.</div>
                 <div className="second">Don't we deserve better than that?</div>
