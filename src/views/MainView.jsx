@@ -24,7 +24,7 @@ var MainView = module.exports = React.createClass({
   render: function() {
     var MainContent = React.createFactory(require(this.props.templatePath)); //refactor path
 
-    return  <div className="row">
+    return  <div>
                 <script type="application/json"
                   id="stateStore"
                   dangerouslySetInnerHTML={{__html: safeStringify(this.state)}}>

@@ -19393,6 +19393,14 @@ var IndexView = module.exports = React.createClass({
   displayName: 'exports',
 
   componentDidMount: function componentDidMount() {
+    var widgetIframe = document.getElementById('sc-widget'),
+        widget = SC.Widget(widgetIframe);
+
+    widget.bind(SC.Widget.Events.READY, function () {
+      // set new volume level
+      widget.setVolume(0.3);
+    });
+
     //document.getElementsByTagName('video')[0].onended = function () {
     //  this.load();
     //  this.play();
@@ -19402,12 +19410,8 @@ var IndexView = module.exports = React.createClass({
     return React.createElement(
       'div',
       { className: 'row' },
-      React.createElement('iframe', { style: { display: 'none' }, src: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/245481004&auto_play=true' }),
-      React.createElement(
-        'video',
-        { autoPlay: true, muted: true, poster: 'public/img/tower_promo.png', className: 'bgvid' },
-        React.createElement('source', { src: 'public/img/tower_promo.mp4', type: 'video/mp4' })
-      ),
+      React.createElement('iframe', { id: 'sc-widget', style: { display: 'none' }, src: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/245481004&auto_play=false' }),
+      React.createElement('script', { src: 'https://w.soundcloud.com/player/api.js', type: 'text/javascript' }),
       React.createElement(
         'div',
         { className: 'intro col-md-12 col-sm-12 col-xs-12' },
@@ -19435,7 +19439,7 @@ var IndexView = module.exports = React.createClass({
           { className: 'row' },
           React.createElement(
             'div',
-            { className: 'main-image col-md-offset-4 col-sm-offset-4 col-xs-offset-4 col-md-4 col-sm-4 col-xs-4' },
+            { className: 'main-image col-md-12 col-sm-12 col-xs-12' },
             React.createElement('img', { src: 'public/img/rikleimt.png' })
           )
         ),
@@ -19444,7 +19448,7 @@ var IndexView = module.exports = React.createClass({
           { className: 'row' },
           React.createElement(
             'div',
-            { className: 'tagline col-md-offset-4 col-sm-offset-4 col-xs-offset-4 col-md-4 col-sm-4 col-xs-4' },
+            { className: 'tagline col-lg-offset-4 col-lg-4 col-md-12 col-sm-12 col-xs-12' },
             'Reborn, Rewritten, Rikleimt'
           )
         ),
@@ -19453,17 +19457,17 @@ var IndexView = module.exports = React.createClass({
           { className: 'row' },
           React.createElement(
             'div',
-            { className: 'coming-soon col-md-offset-4 col-sm-offset-4 col-xs-offset-4 col-md-4 col-sm-4 col-xs-4' },
+            { className: 'coming-soon col-lg-offset-4 col-lg-4 col-md-12 col-sm-12 col-xs-12' },
             'COMING 2017'
           )
         )
       ),
       React.createElement(
         'div',
-        { className: 'col-md-offset-3 col-sm-offset-3 col-xs-offset-3 col-md-6 col-sm-6 col-xs-6 footer' },
+        { className: 'col-lg-offset-3 col-lg-6 col-md-12 col-sm-12 col-xs-12 footer' },
         React.createElement(
           'div',
-          { className: 'reference col-md-4 col-sm-4 col-xs-4' },
+          { className: 'reference col-md-4 col-sm-4 col-xs-12' },
           '"Grounder Anthem (Take a Life With Me)" by ',
           React.createElement(
             'a',
@@ -19473,7 +19477,7 @@ var IndexView = module.exports = React.createClass({
         ),
         React.createElement(
           'div',
-          { className: 'visit col-md-4 col-sm-4 col-xs-4' },
+          { className: 'visit col-md-4 col-sm-4 col-xs-12' },
           'Visit Us on ',
           React.createElement(
             'a',
@@ -19489,7 +19493,7 @@ var IndexView = module.exports = React.createClass({
         ),
         React.createElement(
           'div',
-          { className: 'copyright col-md-4 col-sm-4 col-xs-4' },
+          { className: 'copyright col-md-4 col-sm-4 col-xs-12' },
           '\xA9 2016'
         )
       )
@@ -19530,7 +19534,7 @@ var MainView = module.exports = React.createClass({
 
     return React.createElement(
       'div',
-      { className: 'row' },
+      null,
       React.createElement('script', { type: 'application/json',
         id: 'stateStore',
         dangerouslySetInnerHTML: { __html: safeStringify(this.state) } }),
