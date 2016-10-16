@@ -25,11 +25,3 @@ target/*newrelic_agent.log
 tmp/
 
 .sass-cache
-
-# Auto generated files
-# public/js/vendor.js
-# public/js/app.js
-# public/css/app.css
-# public/css/foundation.css
-# public/css/vendor.css
-public/**
