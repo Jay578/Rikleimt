@@ -19410,7 +19410,7 @@ var IndexView = module.exports = React.createClass({
     return React.createElement(
       'div',
       { className: 'row' },
-      React.createElement('iframe', { id: 'sc-widget', style: { display: 'none' }, src: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/245481004&auto_play=false' }),
+      React.createElement('iframe', { id: 'sc-widget', style: { display: 'none' }, src: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/245481004&auto_play=true' }),
       React.createElement('script', { src: 'https://w.soundcloud.com/player/api.js', type: 'text/javascript' }),
       React.createElement(
         'div',
