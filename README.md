@@ -8,4 +8,4 @@
 4. In the project directory, run bower install.
 5. Run npm install.
 6. Run grunt dev.
-7. In a browser, navigate to http://localhost:8001/.
+7. In a browser, navigate to http://localhost:8080/.

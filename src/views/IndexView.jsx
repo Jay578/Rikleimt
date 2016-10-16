@@ -1,10 +1,16 @@
 var React = require('react');
 
 var IndexView = module.exports = React.createClass({
+  componentDidMount: function() {
+    //document.getElementsByTagName('video')[0].onended = function () {
+    //  this.load();
+    //  this.play();
+    //};
+  },
   render: function() {
     return  <div className="row">
-              <iframe style={{display: 'none'}} src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/247716583&amp;auto_play=true"></iframe>
-              <video controls autoPlay muted poster="public/img/tower_promo.png" className="bgvid">
+              <iframe style={{display: 'none'}} src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/245481004&amp;auto_play=true"></iframe>
+              <video autoPlay muted poster="public/img/tower_promo.png" className="bgvid">
                   <source src="public/img/tower_promo.mp4" type="video/mp4" />
               </video>
               <div className="intro col-md-12 col-sm-12 col-xs-12">
@@ -31,7 +37,7 @@ var IndexView = module.exports = React.createClass({
               </div>
               <div className="col-md-offset-3 col-sm-offset-3 col-xs-offset-3 col-md-6 col-sm-6 col-xs-6 footer">
                 <div className="reference col-md-4 col-sm-4 col-xs-4">
-                  "Clexa Theme" by <a href="https://soundcloud.com/tree-adams/huns3-clexa-theme" target="_blank">Tree Adams</a>
+                  "Grounder Anthem (Take a Life With Me)" by <a href="https://soundcloud.com/watertowermusic/grounder_anthem_100" target="_blank">Julia Dominczak and Tree Adams</a>
                 </div>
                 <div className="visit col-md-4 col-sm-4 col-xs-4">
                   Visit Us on <a href="http://clexarikleimt.tumblr.com/" target="_blank">Tumblr</a> | <a href="https://twitter.com/ClexaRikleimt" target="_blank">Twitter</a>
